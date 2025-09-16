@@ -79,7 +79,7 @@ syn keyword verilogStatement   assume before expect bind
 syn keyword verilogStatement   extends tagged extern
 syn keyword verilogStatement   first_match throughout timeprecision
 syn keyword verilogStatement   timeunit priority type union
-syn keyword verilogStatement   uwire var cross ref wait_order intersect
+syn keyword verilogStatement   uwire var cross wait_order intersect
 syn keyword verilogStatement   wildcard within
 syn keyword verilogStatement   triggered
 syn keyword verilogStatement   std
@@ -102,7 +102,10 @@ syn keyword verilogRepeat      forever repeat while for
 syn keyword verilogRepeat      return break continue
 syn keyword verilogRepeat      do while foreach
 
-syn keyword verilogDirection   input output inout
+syn keyword verilogDirection   input output inout ref
+syn match   verilogDirection   "\<const\s\+ref\>"
+" a 'const' not followed by 'ref' is a constant variable
+syn match   verilogStatement   "\<const\>\(\s+ref\)\@!"
 
 syn keyword verilogParameter   parameter localparam
 
