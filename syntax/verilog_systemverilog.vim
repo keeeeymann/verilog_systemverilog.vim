@@ -114,7 +114,7 @@ syn match   verilogGlobal      "$[a-zA-Z0-9_$]\+"
 syn match   verilogInclude     "`include"
 
 if !exists('g:verilog_disable_constant_highlight')
-    syn match   verilogConstant    "\(^\|[^.]\)\zs\<[A-Z][A-Z0-9_$]*\>"
+    syn match   verilogConstant    "\<[A-Z_][A-Z0-9_$]*\>"
 endif
 
 syn match   verilogNumber      "\(\d\+\)\?'[sS]\?[bB]\s*[0-1_xXzZ?]\+"
