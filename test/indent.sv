@@ -532,6 +532,27 @@ randcase
     3: value <= 2;
 endcase
 
+// indent after endcase
+// https://github.com/vhda/verilog_systemverilog.vim/issues/250
+begin
+    case (a)
+        1: value = 1;
+    endcase
+
+    begin
+    end
+end
+
+begin
+    randcase
+        1: value = 1;
+    endcase
+
+    begin
+    end
+end
+
+
 interface class base;
 
     pure virtual function void a(input int unsigned N, ref t Data);
@@ -1084,6 +1105,25 @@ package automatic regmodel_dpi_pkg;
     endtask
 endpackage
 // End of copied code
+    
+// Code from: // https://github.com/vhda/verilog_systemverilog.vim/issues/231
+class my_class;
+
+    int my_var;
+
+    constraint reg_addr_c {
+        `ifndef MY_MACRO
+            my_var == 2;
+        `else
+            my_var == 3;
+        `endif
+    }
+
+    function new();
+    endfunction
+
+endclass
+// End of copied code
 
 task `my_class::my_task();
     return;
@@ -1092,5 +1132,5 @@ endtask
 function [3 : 0] `my_class::my_func();
     return 0;
 endfunction
-    
+
 // vi: set expandtab softtabstop=4 shiftwidth=4:
