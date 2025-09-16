@@ -30,7 +30,7 @@ let s:vlog_macro          = '`\k\+\((.*)\)\?\s*$'
 let s:vlog_statement      = '.*;\s*$\|'. s:vlog_macro
 let s:vlog_sens_list      = '\(@\s*(.*)\)'
 let s:vlog_always         = '\<always\(_ff\|_comb\|_latch\)\?\>\s*' . s:vlog_sens_list . '\?'
-let s:vlog_method         = '^\(\s*pure\s\+virtual\|\s*extern\)\@!.*\<\(function\|task\)\>\s\+\(\[.*\]\s*\)\?\w\+'
+let s:vlog_method         = '^\(\s*pure\s\+virtual\|\s*extern\)\@!.*\<\(function\|task\)\>\s\+\(\[.*\]\s*\)\?`\?\w\+'
 
 let s:vlog_module         = '\<\(extern\s\+\)\@<!module\>'
 let s:vlog_interface      = '\(virtual\s\+\)\@<!\<interface\>\s*\(\<class\>\)\@!\w\+.*[^,]$'
