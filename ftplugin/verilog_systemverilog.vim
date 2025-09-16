@@ -26,6 +26,8 @@ setlocal fo-=t fo+=croqlm1
 
 " Set 'comments' to format dashed lists in comments.
 setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+" Set 'commentstring' for commenting interactively
+setlocal commentstring=//\ %s
 
 " Win32 and GTK can filter files in the browse dialog
 if (has("gui_win32") || has("gui_gtk")) && !exists("b:browsefilter")
