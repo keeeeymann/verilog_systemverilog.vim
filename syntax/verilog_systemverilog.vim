@@ -127,6 +127,7 @@ syn match   verilogNumber      "\(\d\+\)\?'[sS]\?[hH]\s*[0-9a-fA-F_xXzZ?]\+"
 syn match   verilogNumber      "\<[+-]\?[0-9_]\+\(\.[0-9_]*\)\?\(e[0-9_]*\)\?\>"
 syn match   verilogNumber      "\<\d[0-9_]*\(\.[0-9_]\+\)\=\([fpnum]\)\=s\>"
 syn keyword verilogNumber      1step
+syn match   verilogNumber      "'[01]\>"
 
 syn keyword verilogTodo        contained TODO FIXME
 
